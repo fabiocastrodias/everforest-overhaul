@@ -1,0 +1,154 @@
+:root {
+    --tab-max-height: 28px !important;
+    --tab-min-height: 0 !important;
+    --tab-min-width: 500px !important;
+    --urlbar-toolbar-height: var(--tab-max-height) !important;
+}
+
+.browser-toolbar {
+    --lwt-tab-line-color: none !important;
+    border-bottom: 0px transparent !important;
+}
+
+window, #main-window, #toolbar-menubar, #nav-bar, #TabsToolbar, #navigator-toolbox, #sidebar-box {
+    background-color: rgba(39, 46, 51, 0.4) !important;
+    -moz-appearance: none !important;
+    background-image: none !important;
+}
+
+/* Hide icons for bookmark folders */
+#personal-bookmarks .bookmark-item[container="true"] .toolbarbutton-icon {
+    display: none !important;
+}
+
+/* Disable window tooltip */
+.tab-tooltip {
+    display: none !important;
+}
+
+/* Set size and position of the bar relative to background */
+.tab-background::before {
+    content: "" !important;
+    display: block !important;
+    height: 0.5px !important;
+    margin-bottom: 19.5px !important;
+    
+}
+
+/* Set rounded tabs */
+.tabbrowser-tab {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+
+}
+
+/* Set color for active tab on top bar */
+.tabbrowser-tab[selected] .tab-background::before {
+    background-color: #dafb50 !important; /* Everforest Green Bright */
+    height: 2px !important;
+}
+
+/* Tab text size */
+.tab-text {
+    font-size: 22px !important;
+    color: #d3c6aa !important; /* Everforest White */
+}
+
+/* Selected tab config size and bold */
+.tab-text[selected="true"] {
+    font-size: 22px !important;
+    color: #d3c6aa !important; /* Everforest White */
+}
+
+/* Change color for inactive tabs */
+.tabbrowser-tab:not([selected]) .tab-content .tab-text {
+    color: rgba(211, 198, 170, 0.5) !important;  /*Everforest White Opacity */
+
+}
+
+/* Background for selected tab */
+.tabbrowser-tab[selected="true"] .tab-content {
+    background-color: #00000043 !important;
+}
+
+/* Change color of non-selected tabs on hover */
+.tabbrowser-tab:not([selected]):hover .tab-content:hover {
+    color: #e67e80 !important; /* Everforest Red */
+}
+
+/* Remove tab bottom line */
+.tab-line {
+    display: none !important;
+}
+
+/* Hide "All Tabs" button when the tab bar isn't overflowing */
+#tabbrowser-tabs:not([overflow="true"]) ~ #alltabs-button {
+    display: none !important;
+}
+
+/* Bookmark bar font settings */
+.bookmark-item {
+    font-size: 18px !important;
+    color: #d3c6aa !important; /* Everforest White */
+    background-color: rgba(0, 0, 0, 0) !important;
+    font-weight: 400 !important;
+}
+
+#urlbar {
+    font-size: 14px !important;
+    color: #d3c6aa !important;
+    background-color: #272e33 !important;
+;
+}
+
+/* Bookmark hover effect */
+.bookmark-item:hover {
+    font-size: 18px !important;
+    color: #272e33 !important;
+    background-color: #a7c080 !important; /* Everforest Green */
+}
+
+/* Adjust toolbar and tab bar height */
+#nav-bar,
+.toolbar-items,
+.titlebar-buttonbox-container,
+.tab-content,
+.tab-background,
+.tab-label-container {
+    height: var(--tab-max-height);
+}
+
+.tab-background {
+    margin: 0 !important;
+}
+
+.tab-secondary-label {
+    font-size: .5em !important;
+    margin: -.6em 0 .5em !important;
+}
+
+/* Selection highlight */
+#nav-bar toolbaritem,
+#nav-bar toolbarbutton {
+    --focus-outline: none;
+    --slimbar-highlight-color: #7fbbb3; /* Everforest Blue */
+}
+
+#nav-bar toolbaritem:focus-visible,
+#nav-bar toolbarbutton:focus-visible {
+    background-color: var(--slimbar-highlight-color) !important;
+}
+
+/* Back & Forward Buttons */
+#back-button > .toolbarbutton-icon,
+#forward-button > .toolbarbutton-icon {
+    transform: scale(.8,.8) !important;
+    fill: #dafb50 !important; /* Everforest Green Bright */
+}
+
+#personal-toolbar-empty-description,
+#PersonalToolbar .toolbarbutton-1,
+toolbarbutton.bookmark-item:not(.subviewbutton) {
+    margin-bottom: 0px !important;
+}
+

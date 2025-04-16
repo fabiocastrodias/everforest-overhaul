@@ -1,0 +1,235 @@
+#################################
+#         BASIC SETTINGS        #
+#################################
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id nm-applet
+
+set $mod Mod4
+set $sup Shift
+bindsym $mod+$sup+q kill
+
+font pango:monospace 8
+
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+floating_modifier $mod
+tiling_drag modifier titlebar
+
+bindsym $mod+a focus parent
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+$sup+h move left
+bindsym $mod+$sup+j move down
+bindsym $mod+$sup+k move up
+bindsym $mod+$sup+l move right
+
+bindsym $mod+$sup+Left move left
+bindsym $mod+$sup+Down move down
+bindsym $mod+$sup+Up move up
+bindsym $mod+$sup+Right move right
+
+bindsym $mod+bracketleft split h
+bindsym $mod+bracketright split v
+
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+$sup+space floating toggle
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+set $ws11 "*"
+
+workspace $ws1 output eDP-1
+workspace $ws2 output eDP-1
+workspace $ws3 output eDP-1
+workspace $ws4 output eDP-1
+workspace $ws5 output eDP-1
+workspace $ws6 output eDP-1
+workspace $ws7 output eDP-1
+workspace $ws8 output eDP-1
+workspace $ws9 output eDP-1
+workspace $ws10 output eDP-1
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+bindsym $mod+minus workspace $ws11
+
+bindsym $mod+$sup+1 move container to workspace number $ws1
+bindsym $mod+$sup+2 move container to workspace number $ws2
+bindsym $mod+$sup+3 move container to workspace number $ws3
+bindsym $mod+$sup+4 move container to workspace number $ws4
+bindsym $mod+$sup+5 move container to workspace number $ws5
+bindsym $mod+$sup+6 move container to workspace number $ws6
+bindsym $mod+$sup+7 move container to workspace number $ws7
+bindsym $mod+$sup+8 move container to workspace number $ws8
+bindsym $mod+$sup+9 move container to workspace number $ws9
+bindsym $mod+$sup+0 move container to workspace number $ws10
+bindsym $mod+$sup+minus move container to workspace $ws11
+
+bindsym $mod+$sup+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+
+#################################
+#         CUSTOM SETTINGS       #
+#################################
+
+#*******************************#
+#          Window Borders       #
+#*******************************#
+default_border pixel 1
+gaps inner 10px
+gaps outer 0px
+smart_gaps false
+smart_borders on
+
+# Everforest Dark Palette
+set $bg #272e33
+set $black      #475258
+set $red        #e67e80
+set $green      #a7c080
+set $yellow     #dbbc7f
+set $blue       #7fbbb3
+set $magenta    #d699b6
+set $cyan       #83c092
+set $white      #d3c6aa
+
+# class                  border   background  text     indicator
+client.focused           $black   $black      $yellow  $bg
+client.focused_inactive  $black   $black      $white   $bg
+client.unfocused         $bg      $bg         $white   $bg
+client.urgent            $magenta $bg         $red     $bg 
+client.placeholder       $bg      $bg         $white   $bg 
+client.background        $bg      $bg         $white   $bg     
+
+
+#*******************************#
+#            Hotkeys            #
+#*******************************#
+
+#..........  Browser  ..........#
+bindsym  $mod+$sup+f exec --no-startup-id /usr/bin/firefox
+
+#.......  File Manager  .........#
+bindsym $mod+$sup+d exec --no-startup-id thunar
+
+#.........  Terminal  ...........#
+bindsym $mod+Return exec --no-startup-id alacritty
+
+#...........  Rofi  ............#
+bindsym $mod+d exec --no-startup-id rofi -show drun
+
+#..........  BTOP  .............#
+bindsym $mod+$sup+b exec --no-startup-id alacritty -e btop
+
+#..........  Kazam  .............#
+bindsym $mod+$sup+Print exec --no-startup-id kazam 
+
+#..  Screenshot to Clipboard  ...#
+bindsym Print  exec --no-startup-id maim | xclip -selection clipboard -t image/png
+
+#....  Screenshot to File  ......#
+bindsym $mod+Print exec --no-startup-id kazam -f --silent
+
+#..  Second Monitor - Mirror  ...#
+bindsym $mod+$sup+ctrl+m exec --no-startup-id xrandr --output HDMI-1 --same-as eDP-1 --auto
+
+#..  Second Monitor - Above  ....#
+bindsym $mod+$sup+ctrl+n exec --no-startup-id xrandr --output HDMI-1 --above eDP-1
+
+#.........  Shutdown  ...........#
+bindsym $mod+$sup+XF86PowerOff exec --no-startup-id shutdown -h 0
+
+#. Prevent PowerButton Shutdown .#
+bindsym XF86PowerOff exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'" 
+
+#...  Restart Environment  ....#
+bindsym $mod+$sup+p exec --no-startup-id pkill picom; exec --no-startup-id sh $HOME/.config/polybar/launch.sh; exec --no-startup-id i3 restart; exec --no-startup-id i3 reload
+
+#......  Restart I3WM  ........#
+bindsym $mod+$sup+r restart
+
+#......  Reload I3WM  ........#
+bindsym $mod+$sup+c reload
+
+
+#*******************************#
+#           Start Up            #
+#*******************************#
+
+#.........  Polybar  ...........#
+exec --no-startup-id sh $HOME/.config/polybar/launch.sh
+
+#.......  System Tray  .........#
+exec --no-startup-id xfce4-power-manager
+
+#Second Monitor - Mirror on Boot#
+exec --no-startup-id xrandr --output HDMI-1 --same-as eDP-1 --auto
+
+#........  Wallpaper  ..........#
+exec_always --no-startup-id sh $HOME/Pictures/Wallpaper/.cfg/wallpaper.sh
+
+#.......  Compositor  ..........#
+exec_always --no-startup-id picom
+
+#*******************************#
+#            Disabled           #
+#*******************************#
+# bindsym $mod+d exec --no-startup-id dmenu_run -b -nb '#000000' -nf '#ffd200' -sb '#ffd200' -sf '#000000'
+# bindsym $mod+d exec --no-startup-id dmenu_run -b -nb '#000000' -nf '#ffffff' -sb '#ffffff' -sf '#000000'
+# bindsym $mod+d exec --no-startup-id dmenu_run -b -nb '#000000' -nf '#ffd200' -sb '#ffd200' -sf '#000000'
+# bindsym $mod+d exec --no-startup-id dmenu_run -b -nb '#000000' -nf '#ffffff' -sb '#ffffff' -sf '#000000'
+# bindsym $mod+d exec --no-startup-id dmenu_run -b -nb '#191619' -nf '#e6d9ae' -sb '#7f5c3c' -sf '#d7cdba'
+
+#bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+#bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+

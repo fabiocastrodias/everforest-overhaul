@@ -1,0 +1,73 @@
+{
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+      
+        {
+          "background": "#475258",
+          "foreground": "#d3c6aa",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "template": "{{ .HostName }}",
+          "type": "session"
+        },
+        
+        {
+          "background": "#B1C18D",
+          "foreground": "#272e33",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": " {{ .Path }}",
+          "type": "path"
+        },
+        
+        {
+          "background": "#3A5F70",
+          "foreground": "#dbbc7f",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": "  {{ .Venv }}",
+          "type": "python",
+          "properties": {
+            "check_virtualenv": true,
+            "fetch_virtual_env": true,
+            "folder_name_fallback": false
+          }
+        },
+        
+        {
+          "background": "#d3c6aa",
+          "foreground": "#475258",   
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": " \ueba1{{ .UpstreamIcon }} {{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}",
+          "type": "git"
+        },
+  
+        {
+          "background": "#e67e80",
+          "foreground": "#272e33",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": " \uebc6 ",
+          "type": "root"
+        },
+        
+        {
+          "background": "#e67e80",
+          "foreground": "#272e33",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": " \uea87",
+          "type": "status"
+        }
+        
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 3
+}
+
