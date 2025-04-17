@@ -58,9 +58,10 @@ function install_pkg(){
 }
 
 function alacritty(){
-    curl https://sh.rustup.rs -sSf -y | sh
+    curl https://sh.rustup.rs -sSf | sh
+    . "$HOME/.cargo/env"
     cargo install alacritty
-    sudo mv ~/.cargo/bin/alacritty /usr/local/bin/
+    sudo cp ~/.cargo/bin/alacritty /usr/local/bin/
     . "$HOME/.cargo/env" >> ~/.bashrc
     export PATH=$HOME/.cargo/bin:$PATH >> ~/.bashrc
 }
@@ -85,7 +86,7 @@ function polybar(){
 
 function rofi(){
     echo -e " Installing ROFI dependencies ..."
-    sudo apt-get install libstartup-notification0-dev libxcb-xinerama0-dev libxcb-keysyms1-dev check
+    sudo apt install libstartup-notification0-dev libxcb-xinerama0-dev libxcb-keysyms1-dev check
     echo -e " Installing ROFI from Source ..."
     wget https://github.com/davatorium/rofi/releases/download/1.7.8/rofi-1.7.8.tar.gz
     tar -xzvf rofi-1.7.8.tar.gz
@@ -155,6 +156,7 @@ function install_manager(){
         install_pkg "pkg-config" "$iType"
         install_pkg "python3-sphinx" "$iType"
         install_pkg "python3-packaging" "$iType"
+        install_pkg "libxkbcommon-x11-dev" "$iType"
         install_pkg "libuv1-dev" "$iType"
         install_pkg "libcairo2-dev" "$iType"
         install_pkg "libxcb1-dev" "$iType"
