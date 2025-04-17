@@ -14,10 +14,9 @@ A complete dark-themed customization setup inspired by the Everforest color pale
 This project doesn’t just tweak a few config files — it **downloads**, **installs**, and **applies** the necessary components (themes, icons, fonts, tools, wallpapers, and more) to fully transform your Linux environment into a cohesive and aesthetically pleasing setup.
 
 <br>
+
 ---
----
----
----
+
 <br>
 
 ## 🔧 Applications & Tools
@@ -42,10 +41,9 @@ This project doesn’t just tweak a few config files — it **downloads**, **ins
 - [**Wallpapers**](./Wallpaper/): Everforest-style wallpapers with a `cron`-based auto-switcher
 
 <br>
+
 ---
----
----
----
+
 <br>
 
 ## 🚀 What This Setup Does
@@ -65,10 +63,34 @@ This project doesn’t just tweak a few config files — it **downloads**, **ins
 > ⚠️ **Note:** This setup targets **Debian-based systems** (Ubuntu, Linux Mint, etc.). For Arch, Fedora, etc., you'll need to adapt package names, paths, and install methods.
 
 <br>
+
 ---
+
+<br>
+
+## 📸 Screenshots
+> Here's a preview of the Everforest Overhaul in action.
+
+<p align="center">
+  <img src="./screenshots/i3wm-general.png" alt="i3wm,Polybar,Picom, and Alacritty, an Everforest Desktop" width="800"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/dunst-nemo.png" alt="Dunst Notification and Nemo File Manager with Everforest palette" width="800"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/rofi.png" alt="Rofi Launcher with Everforest Theme" width="800"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/firefox.png" alt="Firefox with Everforest Theme and Transparency" width="800"/>
+</p>
+
+<br>
+
 ---
----
----
+
 <br>
 
 ## 📥 Installation
@@ -83,10 +105,21 @@ bash install.bash
 ```
 
 <br>
+
 ---
+
+<br>
+
+📦 Bonus: Useful Tools & Apps
+
+Not part of the main setup — just a place to drop other tools and scripts I find useful.
+
+Check them out in the [Useful Tools](./useful-tools) directory.
+
+<br>
+
 ---
----
----
+
 <br>
 
 ## 🤝 Credits
@@ -95,4 +128,3 @@ bash install.bash
 [Fausto-Korpsvart/Everforest-GTK-Theme](https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme) – The creator of GTK Everforest themes and icons.
 
 [talwat/everforest-cursors](https://github.com/talwat/everforest-cursors) – The creator of Everforest cursors.
-
