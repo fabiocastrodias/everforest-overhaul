@@ -160,7 +160,7 @@ client.background        $bg      $bg         $white   $bg
 bindsym  $mod+$sup+f exec --no-startup-id /usr/bin/firefox
 
 #.......  File Manager  .........#
-bindsym $mod+$sup+d exec --no-startup-id thunar
+bindsym $mod+$sup+d exec --no-startup-id nemo
 
 #.........  Terminal  ...........#
 bindsym $mod+Return exec --no-startup-id alacritty
