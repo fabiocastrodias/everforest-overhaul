@@ -72,19 +72,19 @@ This project doesn’t just tweak a few config files — it **downloads**, **ins
 > Here's a preview of the Everforest Overhaul in action.
 
 <p align="center">
-  <img src="./screenshots/i3wm-general.png" alt="i3wm,Polybar,Picom, and Alacritty, an Everforest Desktop" width="800"/>
+  <img src="./.screenshots/i3wm-general.png" alt="i3wm,Polybar,Picom, and Alacritty, an Everforest Desktop" width="800"/>
 </p>
 
 <p align="center">
-  <img src="./screenshots/dunst-nemo.png" alt="Dunst Notification and Nemo File Manager with Everforest palette" width="800"/>
+  <img src="./.screenshots/dunst-nemo.png" alt="Dunst Notification and Nemo File Manager with Everforest palette" width="800"/>
 </p>
 
 <p align="center">
-  <img src="./screenshots/rofi.png" alt="Rofi Launcher with Everforest Theme" width="800"/>
+  <img src="./.screenshots/rofi.png" alt="Rofi Launcher with Everforest Theme" width="800"/>
 </p>
 
 <p align="center">
-  <img src="./screenshots/firefox.png" alt="Firefox with Everforest Theme and Transparency" width="800"/>
+  <img src="./.screenshots/firefox.png" alt="Firefox with Everforest Theme and Transparency" width="800"/>
 </p>
 
 <br>
