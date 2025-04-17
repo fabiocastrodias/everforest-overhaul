@@ -5,7 +5,7 @@
 ![Theme](https://img.shields.io/badge/theme-Everforest%20Dark-forestgreen)
 ![Status](https://img.shields.io/badge/status-Active-brightgreen)
 
-`🛠 i3 | Polybar | Picom | Rofi | Dunst | Alacritty | Oh My Posh | Firefox | GTK3 | Custom Wallpapers`
+`🛠 i3 | Polybar | Picom | Rofi | Dunst | Alacritty | Oh My Posh | Firefox | Nemo | BTOP | Neofetch | GTK3 | Custom Wallpapers`
 
 A complete dark-themed customization setup inspired by the Everforest color palette.
 
